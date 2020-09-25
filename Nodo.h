@@ -1,21 +1,23 @@
 #ifndef NODO_H
 #define NODO_H
 
+#include "Equipo.h"
 #include <iostream>
 
 using namespace std;
 
-template <class T>
-
-class Node
+class Nodo
 {
+private:
+    Nodo *next;
+    Equipo *equipo;
+
 public:
     Nodo();
-    Nodo(T);
-    ~Nodo();
-
-    Node *next;
-    T data;
-
+    Nodo(Equipo *);
+    Nodo *nextNode(Nodo *);
+    Nodo *next_node();
+    Equipo *getEquipo();
+    void setEquipo(Equipo *);
 };
 #endif

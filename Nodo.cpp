@@ -1,36 +1,31 @@
 #include "Nodo.h"
+#include "Equipo.h"
 
-template <typename T>
-
-Nodo<T>::Nodo()
+Nodo::Nodo()
 {
-    data = NULL;
-    next = NULL;
 }
 
-template <typename T>
-Nodo<T>::Nodo(T _data)
+Nodo::Nodo(Equipo *_data)
 {
-    data = _data;
-    next = NULL;
+    equipo = _data;
 }
 
-// // Eliminar todos los Nodos
-// template <typename T>
-// void Nodo<T>::delete_all()
-// {
-//     if (next)
-//         next->delete_all();
-//     delete this;
-// }
+Nodo *Nodo::nextNode(Nodo *nuevoTope)
+{
+    this->next = nuevoTope;
+    return next;
+}
+Nodo *Nodo::next_node()
+{
+    return next;
+}
 
-// // Imprimir un Nodo
-// template <typename T>
-// void Nodo<T>::print()
-// {
-//     //cout << "Node-> " << "Dato: " << dato << " Direcion: " << this << " Siguiente: " << next << endl;
-//     cout << data << "-> ";
-// }
+Equipo *Nodo::getEquipo()
+{
+    return equipo;
+}
 
-// template <typename T>
-// Node<T>::~Node() {}
+void Nodo::setEquipo(Equipo *newEquipo)
+{
+    this->equipo = newEquipo;
+}
